@@ -53,7 +53,30 @@ const restaurant = {
     console.log(mainIngredient, otherIngredients);
   },
 };
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
 
+// WITH opetional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// EXAMPLE
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sund'];
+
+for (const day of days) {
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(` On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRissoto?.(0, 1) ?? 'Method does not exist');
+
+// Arrays
+const users = [{ name: 'Isaac', email: 'hello@isaac.io' }];
+
+console.log(users[0]?.name ?? 'User array empty');
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 // for (const item of menu) console.log(item);
