@@ -116,45 +116,82 @@ const game = {
   },
 };
 
-// 1. Loop over the game.scored array and print each player name to the console,
-// along with the goal number (Example: "Goal 1: Lewandowski")
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
 
-// for (const [goal, player] of game.scored.entries()) {
-//   console.log(`Goal ${goal + 1}: ${player}`);
+console.log(orderSet);
+
+console.log(new Set('Isaac'));
+
+console.log(orderSet.size);
+
+console.log(orderSet.has('Pasta'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+console.log(orderSet);
+orderSet.delete('Risotto');
+// orderSet.clear();
+console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const stafUniqiue = new Set(staff);
+console.log(stafUniqiue);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('isaacrendon').size);
+
+// // 1. Loop over the game.scored array and print each player name to the console,
+// // along with the goal number (Example: "Goal 1: Lewandowski")
+
+// // for (const [goal, player] of game.scored.entries()) {
+// //   console.log(`Goal ${goal + 1}: ${player}`);
+// // }
+
+// // 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages,
+// //   you can go check if you don't remember)
+
+// // const oddsValues = Object.values(game.odds);
+// // console.log(oddsValues);
+
+// // let oddSum = 0;
+
+// // for (const odd of oddsValues) {
+// //   oddSum += odd;
+// // }
+
+// // console.log(oddSum / oddsValues.length);
+
+// // 3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+// //       Odd of victory Bayern Munich: 1.33
+// //       Odd of draw: 3.25
+// //       Odd of victory Borrussia Dortmund: 6.5
+// // Get the team names directly from the game object, don't hardcode them (except for "draw").
+// //  HINT: Note how the odds and the game objects have the same property names 😉
+
+// // console.log(`Odd of victory ${game.team1}: ${game.odds.team1}`);
+// // console.log();
+// // console.log(`Odd of victory ${game.team2}: ${game.odds.team2}`);
+
+// console.log(Object.entries(game.odds));
+// console.log(game.team1);
+
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr} ${odd}`);
 // }
-
-// 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages,
-//   you can go check if you don't remember)
-
-// const oddsValues = Object.values(game.odds);
-// console.log(oddsValues);
-
-// let oddSum = 0;
-
-// for (const odd of oddsValues) {
-//   oddSum += odd;
-// }
-
-// console.log(oddSum / oddsValues.length);
-
-// 3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
-//       Odd of victory Bayern Munich: 1.33
-//       Odd of draw: 3.25
-//       Odd of victory Borrussia Dortmund: 6.5
-// Get the team names directly from the game object, don't hardcode them (except for "draw").
-//  HINT: Note how the odds and the game objects have the same property names 😉
-
-// console.log(`Odd of victory ${game.team1}: ${game.odds.team1}`);
-// console.log();
-// console.log(`Odd of victory ${game.team2}: ${game.odds.team2}`);
-
-console.log(Object.entries(game.odds));
-console.log(game.team1);
-
-for (const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${teamStr} ${odd}`);
-}
 
 // if (restaurant.openingHours && restaurant.openingHours.mon)
 //   console.log(restaurant.openingHours.mon.open);
