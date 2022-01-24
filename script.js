@@ -125,33 +125,63 @@ const orderSet = new Set([
   'Pizza',
 ]);
 
-console.log(orderSet);
+const rest = new Map();
+rest.set('name', 'Cassariano');
+rest.set(1, 'Sarasota, Florida');
+console.log(rest.set(2, 'Venice, Florida'));
 
-console.log(new Set('Isaac'));
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
 
-console.log(orderSet.size);
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
 
-console.log(orderSet.has('Pasta'));
-console.log(orderSet.has('Bread'));
-orderSet.add('Garlic Bread');
-orderSet.add('Garlic Bread');
-console.log(orderSet);
-orderSet.delete('Risotto');
-// orderSet.clear();
-console.log(orderSet);
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
 
-for (const order of orderSet) console.log(order);
+console.log(rest.has('categories'));
+rest.delete(2);
+// rest.clear();
+const arr = [1, 2];
+rest.set(arr, 'test');
+rest.set(document.querySelector('h1'), 'heading');
+console.log(rest);
+console.log(rest.size);
 
-// Example
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+console.log(rest.get(arr));
 
-const stafUniqiue = new Set(staff);
-console.log(stafUniqiue);
-console.log(
-  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
-);
+// console.log(orderSet);
 
-console.log(new Set('isaacrendon').size);
+// console.log(new Set('Isaac'));
+
+// console.log(orderSet.size);
+
+// console.log(orderSet.has('Pasta'));
+// console.log(orderSet.has('Bread'));
+// orderSet.add('Garlic Bread');
+// orderSet.add('Garlic Bread');
+// console.log(orderSet);
+// orderSet.delete('Risotto');
+// // orderSet.clear();
+// console.log(orderSet);
+
+// for (const order of orderSet) console.log(order);
+
+// // Example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+// const stafUniqiue = new Set(staff);
+// console.log(stafUniqiue);
+// console.log(
+//   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+// );
+
+// console.log(new Set('isaacrendon').size);
 
 // // 1. Loop over the game.scored array and print each player name to the console,
 // // along with the goal number (Example: "Goal 1: Lewandowski")
